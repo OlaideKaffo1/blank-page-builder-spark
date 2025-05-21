@@ -25,6 +25,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
+import { UserPlus } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -63,27 +64,28 @@ export default function AddUserModal() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant="defaultWithIcon">
+        <Button variant="defaultWithIcon" className="gap-2">
+          <UserPlus className="h-4 w-4" />
           Add User
         </Button>
       </DialogTrigger>
-      <DialogContent className="sm:max-w-[550px] bg-white">
-        <DialogHeader>
-          <DialogTitle>Add New User</DialogTitle>
-          <DialogDescription>
+      <DialogContent className="sm:max-w-[550px] bg-white p-6">
+        <DialogHeader className="pb-4">
+          <DialogTitle className="text-2xl font-semibold">Add New User</DialogTitle>
+          <DialogDescription className="text-muted-foreground">
             Fill out this form to add a new user to your organization.
           </DialogDescription>
         </DialogHeader>
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 py-4">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
             <FormField
               control={form.control}
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Name</FormLabel>
+                  <FormLabel className="text-sm font-medium">Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter user's name" {...field} />
+                    <Input placeholder="Enter user's name" {...field} className="bg-white" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -94,9 +96,9 @@ export default function AddUserModal() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Email</FormLabel>
+                  <FormLabel className="text-sm font-medium">Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter user's email" type="email" {...field} />
+                    <Input placeholder="Enter user's email" type="email" {...field} className="bg-white" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -107,10 +109,10 @@ export default function AddUserModal() {
               name="role"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Role</FormLabel>
+                  <FormLabel className="text-sm font-medium">Role</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="bg-white">
                         <SelectValue placeholder="Select a role" />
                       </SelectTrigger>
                     </FormControl>
@@ -129,10 +131,10 @@ export default function AddUserModal() {
               name="department"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Department</FormLabel>
+                  <FormLabel className="text-sm font-medium">Department</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger>
+                      <SelectTrigger className="bg-white">
                         <SelectValue placeholder="Select a department" />
                       </SelectTrigger>
                     </FormControl>
@@ -149,9 +151,9 @@ export default function AddUserModal() {
                 </FormItem>
               )}
             />
-            <DialogFooter className="pt-4">
+            <DialogFooter className="gap-2 pt-4">
               <DialogClose asChild>
-                <Button variant="outline" type="button">Cancel</Button>
+                <Button variant="cancel" type="button">Cancel</Button>
               </DialogClose>
               <Button type="submit">Add User</Button>
             </DialogFooter>
