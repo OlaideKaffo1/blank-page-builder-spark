@@ -81,9 +81,13 @@ export default function AddUserModal() {
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-sm font-medium">Name</FormLabel>
+                  <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter user's name" {...field} className="bg-white" />
+                    <Input 
+                      placeholder="Enter user's name" 
+                      {...field} 
+                      className="w-full bg-background border-input focus:ring-2 focus:ring-ring" 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -94,9 +98,14 @@ export default function AddUserModal() {
               name="email"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-sm font-medium">Email</FormLabel>
+                  <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter user's email" type="email" {...field} className="bg-white" />
+                    <Input 
+                      placeholder="Enter user's email" 
+                      type="email" 
+                      {...field} 
+                      className="w-full bg-background border-input focus:ring-2 focus:ring-ring" 
+                    />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -107,14 +116,14 @@ export default function AddUserModal() {
               name="role"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-sm font-medium">Role</FormLabel>
+                  <FormLabel>Role</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger className="bg-white">
+                      <SelectTrigger className="w-full bg-background border-input focus:ring-2 focus:ring-ring">
                         <SelectValue placeholder="Select a role" />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent>
+                    <SelectContent className="bg-background">
                       <SelectItem value="Owner">Owner</SelectItem>
                       <SelectItem value="Admin">Admin</SelectItem>
                       <SelectItem value="Member">Member</SelectItem>
@@ -129,14 +138,14 @@ export default function AddUserModal() {
               name="department"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel className="text-sm font-medium">Department</FormLabel>
+                  <FormLabel>Department</FormLabel>
                   <Select onValueChange={field.onChange} defaultValue={field.value}>
                     <FormControl>
-                      <SelectTrigger className="bg-white">
+                      <SelectTrigger className="w-full bg-background border-input focus:ring-2 focus:ring-ring">
                         <SelectValue placeholder="Select a department" />
                       </SelectTrigger>
                     </FormControl>
-                    <SelectContent>
+                    <SelectContent className="bg-background">
                       <SelectItem value="Engineering">Engineering</SelectItem>
                       <SelectItem value="Design">Design</SelectItem>
                       <SelectItem value="Marketing">Marketing</SelectItem>
