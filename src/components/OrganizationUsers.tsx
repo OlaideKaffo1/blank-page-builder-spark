@@ -3,6 +3,7 @@ import React from "react";
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { User, Users } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import AddUserModal from "./AddUserModal";
 
 // Sample data for organization users
 const users = [
@@ -64,8 +65,11 @@ const OrganizationUsers = () => {
           <Users className="h-5 w-5 text-muted-foreground" />
           <h2 className="text-2xl font-semibold">Organization Users</h2>
         </div>
-        <div className="text-sm text-muted-foreground">
-          Total Users: {users.length}
+        <div className="flex items-center gap-4">
+          <div className="text-sm text-muted-foreground">
+            Total Users: {users.length}
+          </div>
+          <AddUserModal />
         </div>
       </div>
       
