@@ -25,7 +25,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
-import { UserPlus } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -65,7 +64,6 @@ export default function AddUserModal() {
     <Dialog>
       <DialogTrigger asChild>
         <Button variant="defaultWithIcon" className="gap-2">
-          <UserPlus className="h-4 w-4" />
           Add User
         </Button>
       </DialogTrigger>
