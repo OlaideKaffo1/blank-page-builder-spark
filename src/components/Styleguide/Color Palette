@@ -33,13 +33,14 @@ const primaryShades: ColorShade[] = [
   { shade: "200", variable: "--primary-200", className: "bg-primary-200", hexCode: "#DDD6FE" },
   { shade: "300", variable: "--primary-300", className: "bg-primary-300", hexCode: "#C4B5FD" },
   { shade: "400", variable: "--primary-400", className: "bg-primary-400", hexCode: "#A78BFC" },
-  { shade: "500", variable: "--primary-500", className: "bg-primary-500", hexCode: "#9b87f5" },
-  { shade: "600", variable: "--primary-600", className: "bg-primary-600", hexCode: "#8B78DD" },
-  { shade: "700", variable: "--primary-700", className: "bg-primary-700", hexCode: "#7360C5" },
-  { shade: "800", variable: "--primary-800", className: "bg-primary-800", hexCode: "#5B48AD" },
-  { shade: "900", variable: "--primary-900", className: "bg-primary-900", hexCode: "#42348D" },
+  { shade: "500", variable: "--primary-500", className: "bg-primary-500", hexCode: "#8383FF" },
+  { shade: "600", variable: "--primary-600", className: "bg-primary-600", hexCode: "#7A7AE6" },
+  { shade: "700", variable: "--primary-700", className: "bg-primary-700", hexCode: "#6A6ACC" },
+  { shade: "800", variable: "--primary-800", className: "bg-primary-800", hexCode: "#5959B3" },
+  { shade: "900", variable: "--primary-900", className: "bg-primary-900", hexCode: "#4A4A99" },
 ];
 
+// Shades for primary and secondary
 const secondaryShades: ColorShade[] = [
   { shade: "50", variable: "--secondary-50", className: "bg-secondary-50", hexCode: "#F9F9FA" },
   { shade: "100", variable: "--secondary-100", className: "bg-secondary-100", hexCode: "#F1F1F2" },
