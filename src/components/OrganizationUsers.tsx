@@ -108,17 +108,10 @@ const OrganizationUsers = () => {
                   <Badge 
                     variant={
                       user.status === "Active" 
-                        ? "default" 
+                        ? "live" 
                         : user.status === "Away" 
-                          ? "outline" 
-                          : "secondary"
-                    }
-                    className={
-                      user.status === "Active" 
-                        ? "bg-green-500 hover:bg-green-600" 
-                        : user.status === "Away" 
-                          ? "bg-amber-100 text-amber-800 hover:bg-amber-200 border-amber-200" 
-                          : "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                          ? "inProgress" 
+                          : "cancelled"
                     }
                   >
                     {user.status}
