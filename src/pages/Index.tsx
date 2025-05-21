@@ -17,6 +17,7 @@ import {
   FormLabel,
   FormMessage,
 } from "@/components/ui/form";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -27,6 +28,9 @@ const formSchema = z.object({
   }),
   message: z.string().min(10, {
     message: "Message must be at least 10 characters.",
+  }),
+  category: z.string({
+    required_error: "Please select a category.",
   }),
 });
 
@@ -92,6 +96,34 @@ const Index = () => {
                     </FormControl>
                     <FormDescription>
                       We'll never share your email with anyone else.
+                    </FormDescription>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              
+              <FormField
+                control={form.control}
+                name="category"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Category</FormLabel>
+                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                      <FormControl>
+                        <SelectTrigger className="w-full">
+                          <SelectValue placeholder="Select a category" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        <SelectItem value="general">General Inquiry</SelectItem>
+                        <SelectItem value="support">Technical Support</SelectItem>
+                        <SelectItem value="billing">Billing Question</SelectItem>
+                        <SelectItem value="feedback">Feedback</SelectItem>
+                        <SelectItem value="other">Other</SelectItem>
+                      </SelectContent>
+                    </Select>
+                    <FormDescription>
+                      Please select the category that best describes your inquiry.
                     </FormDescription>
                     <FormMessage />
                   </FormItem>
