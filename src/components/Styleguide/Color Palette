@@ -16,7 +16,7 @@ type ColorShade = {
 
 // Main colors and their variants
 const colorVariants: ColorVariant[] = [
-  { name: "Primary", variable: "--primary", className: "bg-primary", hexCode: "#9b87f5" },
+  { name: "Primary", variable: "--primary", className: "bg-primary", hexCode: "#8383FF" },
   { name: "Secondary", variable: "--secondary", className: "bg-secondary", hexCode: "#545659" },
   { name: "Accent", variable: "--accent", className: "bg-accent", hexCode: "#F4F3FF" },
   { name: "Muted", variable: "--muted", className: "bg-muted", hexCode: "#F5F7FA" },
