@@ -11,7 +11,6 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -77,9 +76,6 @@ const Index = () => {
                     <FormControl>
                       <Input placeholder="Your name" {...field} />
                     </FormControl>
-                    <FormDescription>
-                      Please enter your full name.
-                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -94,9 +90,6 @@ const Index = () => {
                     <FormControl>
                       <Input type="email" placeholder="your.email@example.com" {...field} />
                     </FormControl>
-                    <FormDescription>
-                      We'll never share your email with anyone else.
-                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -122,9 +115,6 @@ const Index = () => {
                         <SelectItem value="other">Other</SelectItem>
                       </SelectContent>
                     </Select>
-                    <FormDescription>
-                      Please select the category that best describes your inquiry.
-                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
@@ -143,9 +133,6 @@ const Index = () => {
                         {...field} 
                       />
                     </FormControl>
-                    <FormDescription>
-                      Please provide details about your inquiry.
-                    </FormDescription>
                     <FormMessage />
                   </FormItem>
                 )}
