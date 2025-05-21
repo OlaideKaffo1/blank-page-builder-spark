@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
@@ -16,8 +17,6 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 
 const formSchema = z.object({
@@ -59,27 +58,6 @@ const Index = () => {
   return (
     <div className="min-h-screen w-full bg-white p-8 flex flex-col items-center justify-center gap-8">
       <h1 className="text-3xl font-bold text-primary mb-4">Welcome to the Application</h1>
-      
-      {/* Featured Card with Badge */}
-      <Card className="w-full max-w-md border shadow-sm">
-        <CardHeader className="flex flex-row items-start justify-between space-y-0">
-          <div>
-            <CardTitle>Featured Content</CardTitle>
-            <CardDescription>Important information about our services</CardDescription>
-          </div>
-          <Badge variant="live">Live</Badge>
-        </CardHeader>
-        <CardContent>
-          <p className="text-sm text-gray-600">
-            This card showcases important content that we want to highlight for our users.
-            The badge indicates that this feature is currently live and available.
-          </p>
-        </CardContent>
-        <CardFooter className="flex justify-between">
-          <Button variant="outline" size="sm">Learn More</Button>
-          <Button size="sm">Get Started</Button>
-        </CardFooter>
-      </Card>
       
       <Button onClick={() => setIsModalOpen(true)}>Open Form Modal</Button>
       
