@@ -5,63 +5,64 @@ type ColorVariant = {
   name: string;
   variable: string;
   className: string;
+  hexCode: string;
 };
 
 type ColorShade = {
   shade: string;
   variable: string;
   className: string;
+  hexCode: string;
 };
 
 // Main colors and their variants
 const colorVariants: ColorVariant[] = [
-  { name: "Primary", variable: "--primary", className: "bg-primary" },
-  { name: "Secondary", variable: "--secondary", className: "bg-secondary" },
-  { name: "Accent", variable: "--accent", className: "bg-accent" },
-  { name: "Muted", variable: "--muted", className: "bg-muted" },
-  { name: "Destructive", variable: "--destructive", className: "bg-destructive" },
-  { name: "Success", variable: "--success", className: "bg-success" },
-  { name: "Warning", variable: "--warning", className: "bg-warning" },
-  { name: "Info", variable: "--info", className: "bg-info" },
+  { name: "Primary", variable: "--primary", className: "bg-primary", hexCode: "#8383FF" },
+  { name: "Secondary", variable: "--secondary", className: "bg-secondary", hexCode: "#545659" },
+  { name: "Accent", variable: "--accent", className: "bg-accent", hexCode: "#F4F3FF" },
+  { name: "Muted", variable: "--muted", className: "bg-muted", hexCode: "#F5F7FA" },
+  { name: "Destructive", variable: "--destructive", className: "bg-destructive", hexCode: "#F43F5E" },
+  { name: "Success", variable: "--success", className: "bg-success", hexCode: "#22C55E" },
+  { name: "Warning", variable: "--warning", className: "bg-warning", hexCode: "#F97316" },
+  { name: "Info", variable: "--info", className: "bg-info", hexCode: "#0284C7" },
 ];
-
 // Shades for primary and secondary
 const primaryShades: ColorShade[] = [
-  { shade: "50", variable: "--primary-50", className: "bg-primary-50" },
-  { shade: "100", variable: "--primary-100", className: "bg-primary-100" },
-  { shade: "200", variable: "--primary-200", className: "bg-primary-200" },
-  { shade: "300", variable: "--primary-300", className: "bg-primary-300" },
-  { shade: "400", variable: "--primary-400", className: "bg-primary-400" },
-  { shade: "500", variable: "--primary-500", className: "bg-primary-500" },
-  { shade: "600", variable: "--primary-600", className: "bg-primary-600" },
-  { shade: "700", variable: "--primary-700", className: "bg-primary-700" },
-  { shade: "800", variable: "--primary-800", className: "bg-primary-800" },
-  { shade: "900", variable: "--primary-900", className: "bg-primary-900" },
+  { shade: "50", variable: "--primary-50", className: "bg-primary-50", hexCode: "#F5F3FF" },
+  { shade: "100", variable: "--primary-100", className: "bg-primary-100", hexCode: "#EDEDFF" },
+  { shade: "200", variable: "--primary-200", className: "bg-primary-200", hexCode: "#D6D6FF" },
+  { shade: "300", variable: "--primary-300", className: "bg-primary-300", hexCode: "#BFBFFF" },
+  { shade: "400", variable: "--primary-400", className: "bg-primary-400", hexCode: "#A9A9FF" },
+  { shade: "500", variable: "--primary-500", className: "bg-primary-500", hexCode: "#8383FF" },
+  { shade: "600", variable: "--primary-600", className: "bg-primary-600", hexCode: "#6A6AFF" },
+  { shade: "700", variable: "--primary-700", className: "bg-primary-700", hexCode: "#5151FF" },
+  { shade: "800", variable: "--primary-800", className: "bg-primary-800", hexCode: "#3838FF" },
+  { shade: "900", variable: "--primary-900", className: "bg-primary-900", hexCode: "#1F1FFF" },
 ];
 
 const secondaryShades: ColorShade[] = [
-  { shade: "50", variable: "--secondary-50", className: "bg-secondary-50" },
-  { shade: "100", variable: "--secondary-100", className: "bg-secondary-100" },
-  { shade: "200", variable: "--secondary-200", className: "bg-secondary-200" },
-  { shade: "300", variable: "--secondary-300", className: "bg-secondary-300" },
-  { shade: "400", variable: "--secondary-400", className: "bg-secondary-400" },
-  { shade: "500", variable: "--secondary-500", className: "bg-secondary-500" },
-  { shade: "600", variable: "--secondary-600", className: "bg-secondary-600" },
-  { shade: "700", variable: "--secondary-700", className: "bg-secondary-700" },
-  { shade: "800", variable: "--secondary-800", className: "bg-secondary-800" },
-  { shade: "900", variable: "--secondary-900", className: "bg-secondary-900" },
+  { shade: "50", variable: "--secondary-50", className: "bg-secondary-50", hexCode: "#F9F9FA" },
+  { shade: "100", variable: "--secondary-100", className: "bg-secondary-100", hexCode: "#F1F1F2" },
+  { shade: "200", variable: "--secondary-200", className: "bg-secondary-200", hexCode: "#E3E4E5" },
+  { shade: "300", variable: "--secondary-300", className: "bg-secondary-300", hexCode: "#A5A6A9" },
+  { shade: "400", variable: "--secondary-400", className: "bg-secondary-400", hexCode: "#84868A" },
+  { shade: "500", variable: "--secondary-500", className: "bg-secondary-500", hexCode: "#545659" },
+  { shade: "600", variable: "--secondary-600", className: "bg-secondary-600", hexCode: "#3F4144" },
+  { shade: "700", variable: "--secondary-700", className: "bg-secondary-700", hexCode: "#333538" },
+  { shade: "800", variable: "--secondary-800", className: "bg-secondary-800", hexCode: "#1B1C1E" },
+  { shade: "900", variable: "--secondary-900", className: "bg-secondary-900", hexCode: "#0B0B0C" },
 ];
 
 // Semantic colors
 const semanticColors: ColorVariant[] = [
-  { name: "Background", variable: "--background", className: "bg-background" },
-  { name: "Foreground", variable: "--foreground", className: "bg-foreground text-background" },
-  { name: "Card", variable: "--card", className: "bg-card" },
-  { name: "Card Foreground", variable: "--card-foreground", className: "bg-card-foreground text-background" },
-  { name: "Popover", variable: "--popover", className: "bg-popover" },
-  { name: "Popover Foreground", variable: "--popover-foreground", className: "bg-popover-foreground text-background" },
-  { name: "Border", variable: "--border", className: "bg-border" },
-  { name: "Input", variable: "--input", className: "bg-input" },
+  { name: "Background", variable: "--background", className: "bg-background", hexCode: "#FAFCFE" },
+  { name: "Foreground", variable: "--foreground", className: "bg-foreground text-background", hexCode: "#0F1629" },
+  { name: "Card", variable: "--card", className: "bg-card", hexCode: "#FFFFFF" },
+  { name: "Card Foreground", variable: "--card-foreground", className: "bg-card-foreground text-background", hexCode: "#0F1629" },
+  { name: "Popover", variable: "--popover", className: "bg-popover", hexCode: "#FFFFFF" },
+  { name: "Popover Foreground", variable: "--popover-foreground", className: "bg-popover-foreground text-background", hexCode: "#0F1629" },
+  { name: "Border", variable: "--border", className: "bg-border", hexCode: "#E8EDF3" },
+  { name: "Input", variable: "--input", className: "bg-input", hexCode: "#E8EDF3" },
 ];
 
 export default function ColorPalette() {
@@ -76,7 +77,10 @@ export default function ColorPalette() {
               <div className="p-3">
                 <p className="font-medium">{color.name}</p>
                 <code className="text-xs text-muted-foreground">{color.variable}</code>
-                <p className="text-xs mt-1 font-mono">{color.className}</p>
+                <div className="flex flex-col space-y-1 mt-2">
+                  <p className="text-xs font-mono">{color.className}</p>
+                  <p className="text-xs font-mono text-secondary-600">{color.hexCode}</p>
+                </div>
               </div>
             </div>
           ))}
@@ -92,7 +96,10 @@ export default function ColorPalette() {
               <div className="p-3">
                 <p className="font-medium">{shade.shade}</p>
                 <code className="text-xs text-muted-foreground">{shade.variable}</code>
-                <p className="text-xs mt-1 font-mono">{shade.className}</p>
+                <div className="flex flex-col space-y-1 mt-2">
+                  <p className="text-xs font-mono">{shade.className}</p>
+                  <p className="text-xs font-mono text-secondary-600">{shade.hexCode}</p>
+                </div>
               </div>
             </div>
           ))}
@@ -108,7 +115,10 @@ export default function ColorPalette() {
               <div className="p-3">
                 <p className="font-medium">{shade.shade}</p>
                 <code className="text-xs text-muted-foreground">{shade.variable}</code>
-                <p className="text-xs mt-1 font-mono">{shade.className}</p>
+                <div className="flex flex-col space-y-1 mt-2">
+                  <p className="text-xs font-mono">{shade.className}</p>
+                  <p className="text-xs font-mono text-secondary-600">{shade.hexCode}</p>
+                </div>
               </div>
             </div>
           ))}
@@ -128,7 +138,10 @@ export default function ColorPalette() {
               <div className="p-3">
                 <p className="font-medium">{color.name}</p>
                 <code className="text-xs text-muted-foreground">{color.variable}</code>
-                <p className="text-xs mt-1 font-mono">{color.className}</p>
+                <div className="flex flex-col space-y-1 mt-2">
+                  <p className="text-xs font-mono">{color.className}</p>
+                  <p className="text-xs font-mono text-secondary-600">{color.hexCode}</p>
+                </div>
               </div>
             </div>
           ))}
