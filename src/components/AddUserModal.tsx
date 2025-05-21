@@ -1,4 +1,3 @@
-
 import React from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
@@ -64,8 +63,7 @@ export default function AddUserModal() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button className="gap-2">
-          <PlusCircle className="h-4 w-4" />
+        <Button variant="defaultWithIcon">
           Add User
         </Button>
       </DialogTrigger>
