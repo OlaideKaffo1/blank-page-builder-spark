@@ -10,7 +10,7 @@ const Dashboard = () => {
       <p className="text-muted-foreground text-lg mb-8">Welcome to your dashboard!</p>
       
       <Link to="/">
-        <Button variant="outline">Back to Home</Button>
+        <Button variant="secondary">Back to Home</Button>
       </Link>
     </div>
   );
