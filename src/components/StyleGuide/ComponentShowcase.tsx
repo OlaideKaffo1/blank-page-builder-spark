@@ -36,8 +36,8 @@ export default function ComponentShowcase() {
         <div className="space-y-4">
           <h3 className="text-lg font-medium">Buttons with Icon</h3>
           <div className="flex flex-wrap gap-4">
-            <Button variant="defaultWithIcon">Add Item</Button>
-            <Button variant="secondaryWithIcon">Add Item</Button>
+            <Button variant="AddNew">Add Item</Button>
+            <Button variant="AddNewSecondary">Add Item</Button>
           </div>
         </div>
 
@@ -66,7 +66,7 @@ export default function ComponentShowcase() {
           <ul className="list-disc pl-5 space-y-1 text-sm">
             <li>Use <code className="text-xs">default</code> for primary actions (submit, confirm)</li>
             <li>Use <code className="text-xs">secondary</code> for secondary actions</li>
-            <li>Use <code className="text-xs">defaultWithIcon</code> or <code className="text-xs">secondaryWithIcon</code> for actions that add or create</li>
+            <li>Use <code className="text-xs">AddNew</code> or <code className="text-xs">AddNewSecondary</code> for actions that add or create</li>
             <li>Use <code className="text-xs">cancel</code> for dismissing or canceling actions</li>
             <li>Use <code className="text-xs">delete</code> for delete actions</li>
             <li>Use <code className="text-xs">link</code> for less emphasis</li>
@@ -80,7 +80,7 @@ export default function ComponentShowcase() {
 // Examples
 <Button>Default Button</Button>
 <Button variant="secondary">Secondary</Button>
-<Button variant="defaultWithIcon">Add Item</Button>
+<Button variant="AddNew">Add Item</Button>
 <Button variant="cancel">Cancel</Button>
 <Button variant="delete">Delete</Button>`}
             </pre>
