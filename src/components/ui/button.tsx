@@ -42,14 +42,21 @@ export interface ButtonProps
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, children, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
+    const showIcon = variant === 'AddNew' || variant === 'AddNewSecondary'
+    const showDeleteIcon = variant === 'delete'
+    
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         {...props}
-      />
+      >
+        {showIcon && <PlusCircle className="h-4 w-4" />}
+        {showDeleteIcon && <Trash2 className="h-4 w-4" />}
+        {children}
+      </Comp>
     )
   }
 )
