@@ -15,14 +15,14 @@ const buttonVariants = cva(
         outline:
           "border border-input bg-background hover:bg-accent hover:text-accent-foreground",
         secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+          "bg-white text-primary border border-primary hover:bg-accent hover:text-primary",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
         // Add new variants used in the style guide components
         cancel: "bg-gray-200 text-gray-800 hover:bg-gray-300",
         delete: "bg-red-500 text-white hover:bg-red-600",
-        defaultWithIcon: "bg-primary text-primary-foreground hover:bg-primary/90",
-        secondaryWithIcon: "bg-secondary text-secondary-foreground hover:bg-secondary/80"
+        AddNew: "bg-primary text-primary-foreground hover:bg-primary/90",
+        AddNewSecondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80"
       },
       size: {
         default: "h-10 px-4 py-2",
