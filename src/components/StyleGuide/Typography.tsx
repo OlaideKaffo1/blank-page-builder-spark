@@ -4,91 +4,80 @@ import { cn } from "@/lib/utils";
 const textStyles = [
   {
     name: "Display",
-    className: "text-5xl md:text-6xl font-bold tracking-tight leading-tight mb-8",
+    className: "text-5xl md:text-6xl font-bold tracking-tight",
     element: "h1",
     sample: "Display Heading",
-    usage: "Hero sections, main page titles",
-    spacing: "mb-8 (2rem)"
+    usage: "Hero sections, main page titles"
   },
   {
     name: "Heading 1",
-    className: "text-4xl font-bold tracking-tight leading-tight mb-6",
+    className: "text-4xl font-bold tracking-tight",
     element: "h1",
     sample: "Heading One",
-    usage: "Page titles, major section headers",
-    spacing: "mb-6 (1.5rem)"
+    usage: "Page titles, major section headers"
   },
   {
     name: "Heading 2",
-    className: "text-3xl font-bold leading-tight mb-4",
+    className: "text-3xl font-bold",
     element: "h2",
     sample: "Heading Two",
-    usage: "Section headers, important content",
-    spacing: "mb-4 (1rem)"
+    usage: "Section headers, important content"
   },
   {
     name: "Heading 3",
-    className: "text-2xl font-semibold leading-tight mb-3",
+    className: "text-2xl font-semibold",
     element: "h3",
     sample: "Heading Three",
-    usage: "Sub-section headers, card titles",
-    spacing: "mb-3 (0.75rem)"
+    usage: "Sub-section headers, card titles"
   },
   {
     name: "Heading 4",
-    className: "text-xl font-semibold leading-snug mb-3",
+    className: "text-xl font-semibold",
     element: "h4",
     sample: "Heading Four",
-    usage: "Minor section headers",
-    spacing: "mb-3 (0.75rem)"
+    usage: "Minor section headers"
   },
   {
     name: "Large Text",
-    className: "text-lg leading-relaxed mb-4",
+    className: "text-lg",
     element: "p",
-    sample: "Large text is used for important paragraphs that need emphasis and better readability.",
-    usage: "Featured content, introduction paragraphs",
-    spacing: "mb-4 (1rem)"
+    sample: "Large text is used for important paragraphs that need emphasis.",
+    usage: "Featured content, introduction paragraphs"
   },
   {
     name: "Body",
-    className: "text-base leading-relaxed mb-4",
+    className: "text-base",
     element: "p",
-    sample: "This is regular body text used for the main content of the page. It should be easy to read and have good contrast with proper line spacing.",
-    usage: "Main content text",
-    spacing: "mb-4 (1rem)"
+    sample: "This is regular body text used for the main content of the page. It should be easy to read and have good contrast.",
+    usage: "Main content text"
   },
   {
     name: "Small",
-    className: "text-sm leading-normal mb-2",
+    className: "text-sm",
     element: "p",
-    sample: "Small text is used for less important information that doesn't need to stand out but still needs proper spacing.",
-    usage: "Secondary information, metadata",
-    spacing: "mb-2 (0.5rem)"
+    sample: "Small text is used for less important information that doesn't need to stand out.",
+    usage: "Secondary information, metadata"
   },
   {
     name: "Muted",
-    className: "text-sm text-muted-foreground leading-normal mb-2",
+    className: "text-sm text-muted-foreground",
     element: "p",
-    sample: "Muted text is used for helper text and less important information with subtle styling.",
-    usage: "Helper text, captions, secondary information",
-    spacing: "mb-2 (0.5rem)"
+    sample: "Muted text is used for helper text and less important information.",
+    usage: "Helper text, captions, secondary information"
   },
   {
     name: "Link",
-    className: "text-primary hover:underline cursor-pointer leading-normal",
+    className: "text-primary hover:underline cursor-pointer",
     element: "a",
     sample: "Click here to learn more",
-    usage: "Hyperlinks, clickable text",
-    spacing: "inline (no margin)"
+    usage: "Hyperlinks, clickable text"
   },
   {
     name: "Code",
-    className: "text-sm bg-muted p-3 rounded leading-relaxed mb-4 block",
+    className: "text-sm bg-muted p-2 rounded",
     element: "code",
     sample: 'const greeting = "Hello, world!";',
-    usage: "Code snippets, technical content",
-    spacing: "mb-4 (1rem) with p-3 internal"
+    usage: "Code snippets, technical content"
   }
 ];
 
@@ -100,41 +89,28 @@ const fontWeights = [
   { name: "Bold", weight: 700, className: "font-bold" }
 ];
 
-const spacingGuidelines = [
-  { name: "Section Spacing", value: "mb-12 (3rem)", usage: "Between major sections" },
-  { name: "Component Spacing", value: "mb-8 (2rem)", usage: "Between components" },
-  { name: "Content Spacing", value: "mb-6 (1.5rem)", usage: "Between content blocks" },
-  { name: "Element Spacing", value: "mb-4 (1rem)", usage: "Between related elements" },
-  { name: "Tight Spacing", value: "mb-2 (0.5rem)", usage: "Between closely related items" },
-  { name: "Line Height", value: "leading-relaxed", usage: "For body text readability" },
-  { name: "Tight Line Height", value: "leading-tight", usage: "For headings and titles" },
-];
-
 export default function Typography() {
   return (
-    <div className="space-y-12">
+    <div className="space-y-10">
       {/* Text Styles */}
       <div>
-        <h3 className="text-lg font-medium mb-6">Text Styles with Spacing</h3>
+        <h3 className="text-lg font-medium mb-4">Text Styles</h3>
         <div className="border rounded-lg overflow-hidden divide-y">
           {textStyles.map((style, index) => {
             const Element = style.element as keyof JSX.IntrinsicElements;
             
             return (
-              <div key={index} className="p-6">
-                <div className="flex flex-col lg:flex-row lg:items-start justify-between gap-6">
-                  <div className="lg:w-2/3">
+              <div key={index} className="p-4">
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                  <div className="md:w-2/3">
                     <Element className={style.className}>
                       {style.sample}
                     </Element>
                   </div>
-                  <div className="lg:w-1/3 space-y-2">
+                  <div className="md:w-1/3">
                     <p className="font-medium">{style.name}</p>
-                    <p className="text-xs text-muted-foreground">{style.usage}</p>
-                    <div className="space-y-1">
-                      <code className="text-xs bg-muted p-1 rounded block">{style.className}</code>
-                      <p className="text-xs text-green-600 font-medium">Spacing: {style.spacing}</p>
-                    </div>
+                    <p className="text-xs text-muted-foreground mt-1">{style.usage}</p>
+                    <code className="text-xs bg-muted p-1 rounded mt-1 block">{style.className}</code>
                   </div>
                 </div>
               </div>
@@ -143,31 +119,17 @@ export default function Typography() {
         </div>
       </div>
 
-      {/* Spacing Guidelines */}
-      <div>
-        <h3 className="text-lg font-medium mb-6">Spacing Guidelines</h3>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {spacingGuidelines.map((guideline) => (
-            <div key={guideline.name} className="border rounded-lg p-4">
-              <p className="font-medium mb-1">{guideline.name}</p>
-              <code className="text-sm bg-muted p-2 rounded block mb-2">{guideline.value}</code>
-              <p className="text-xs text-muted-foreground">{guideline.usage}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
       {/* Font Weights */}
       <div>
-        <h3 className="text-lg font-medium mb-6">Font Weights</h3>
+        <h3 className="text-lg font-medium mb-4">Font Weights</h3>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {fontWeights.map((weight) => (
             <div key={weight.name} className="border rounded-lg p-4">
-              <p className={cn("text-2xl mb-3", weight.className)}>Aa Bb Cc</p>
-              <div className="space-y-1">
+              <p className={cn("text-2xl", weight.className)}>Aa Bb Cc</p>
+              <div className="mt-3">
                 <p className="font-medium">{weight.name}</p>
                 <p className="text-xs text-muted-foreground">{weight.weight}</p>
-                <code className="text-xs bg-muted p-1 rounded block">{weight.className}</code>
+                <code className="text-xs bg-muted p-1 rounded mt-1 block">{weight.className}</code>
               </div>
             </div>
           ))}
@@ -176,32 +138,30 @@ export default function Typography() {
       
       {/* Font Families */}
       <div>
-        <h3 className="text-lg font-medium mb-6">Font Families</h3>
+        <h3 className="text-lg font-medium mb-4">Font Families</h3>
         <div className="grid grid-cols-1 gap-4">
           <div className="border rounded-lg p-6">
-            <h4 className="font-sans text-2xl mb-4 leading-tight">DM Sans (Sans-serif)</h4>
-            <p className="font-sans mb-6 leading-relaxed">
+            <h4 className="font-sans text-2xl mb-2">DM Sans (Sans-serif)</h4>
+            <p className="font-sans mb-4">
               ABCDEFGHIJKLMNOPQRSTUVWXYZ<br />
               abcdefghijklmnopqrstuvwxyz<br />
               0123456789
             </p>
-            <code className="text-xs bg-muted p-2 rounded block mb-3">font-sans</code>
-            <p className="text-sm text-muted-foreground leading-normal">Used for all general UI text, headings, and content.</p>
+            <code className="text-xs bg-muted p-1 rounded">font-sans</code>
+            <p className="text-sm text-muted-foreground mt-3">Used for all general UI text, headings, and content.</p>
           </div>
         </div>
       </div>
 
       {/* Typography Guidelines */}
-      <div className="p-6 bg-muted rounded-lg">
-        <h3 className="text-sm font-medium mb-4">Typography Guidelines</h3>
-        <ul className="list-disc pl-5 space-y-2 text-sm leading-relaxed">
-          <li>Maintain a clear visual hierarchy with appropriate heading levels and consistent spacing</li>
+      <div className="p-4 bg-muted rounded-md">
+        <h3 className="text-sm font-medium mb-2">Typography Guidelines</h3>
+        <ul className="list-disc pl-5 space-y-1 text-sm">
+          <li>Maintain a clear visual hierarchy with appropriate heading levels</li>
           <li>Use proper semantic HTML elements (h1, h2, p, etc.) for accessibility</li>
           <li>Limit line length to 80 characters or less for optimal readability</li>
           <li>Ensure sufficient color contrast between text and background</li>
-          <li>Use consistent font sizes, weights, and spacing throughout the application</li>
-          <li>Apply proper line heights: tight for headings, relaxed for body text</li>
-          <li>Use margin-bottom consistently to create rhythm and visual flow</li>
+          <li>Use consistent font sizes and weights throughout the application</li>
         </ul>
       </div>
     </div>
