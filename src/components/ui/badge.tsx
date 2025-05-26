@@ -9,7 +9,6 @@ const badgeVariants = cva(
   {
     variants: {
       variant: {
-        
         // Add new variants used in the style guide components
         live: "border-transparent bg-green-500 text-white",
         inProgress: "border-transparent bg-blue-500 text-white",

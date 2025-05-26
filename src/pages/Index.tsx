@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
@@ -18,6 +19,7 @@ import {
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Link } from "react-router-dom";
+import { UserPlus } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -55,15 +57,24 @@ const Index = () => {
     setIsModalOpen(false);
   }
 
+  const handleAddNewUser = () => {
+    console.log("Add new user clicked");
+    // This is where you would typically navigate to a user creation form or open a modal
+  };
+
   return (
     <div className="min-h-screen w-full bg-white p-8 flex flex-col items-center justify-center gap-8">
       <h1 className="text-3xl font-bold text-primary mb-4">Welcome to the Application</h1>
       
-      <div className="flex gap-4">
+      <div className="flex gap-4 flex-wrap justify-center">
         <Button onClick={() => setIsModalOpen(true)}>Open Form Modal</Button>
         <Link to="/dashboard">
           <Button variant="secondary">Go to Dashboard</Button>
         </Link>
+        <Button variant="AddNew" onClick={handleAddNewUser}>
+          <UserPlus className="mr-2 h-4 w-4" />
+          Add New User
+        </Button>
       </div>
       
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
