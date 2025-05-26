@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
@@ -66,6 +67,7 @@ const Index = () => {
         <Link to="/dashboard">
           <Button variant="secondary">Go to Dashboard</Button>
         </Link>
+        <Button variant="AddNew">New Dashboard</Button>
       </div>
 
       {/* Live Status Card */}
