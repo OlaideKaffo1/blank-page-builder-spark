@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
@@ -19,7 +18,7 @@ import {
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Link } from "react-router-dom";
-import { UserPlus } from "lucide-react";
+import { PlusCircle } from "lucide-react";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -72,7 +71,7 @@ const Index = () => {
           <Button variant="secondary">Go to Dashboard</Button>
         </Link>
         <Button variant="AddNew" onClick={handleAddNewUser}>
-          <UserPlus className="mr-2 h-4 w-4" />
+          <PlusCircle className="mr-2 h-4 w-4" />
           Add New User
         </Button>
       </div>
