@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
@@ -18,6 +17,7 @@ import {
 } from "@/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Link } from "react-router-dom";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -59,7 +59,12 @@ const Index = () => {
     <div className="min-h-screen w-full bg-white p-8 flex flex-col items-center justify-center gap-8">
       <h1 className="text-3xl font-bold text-primary mb-4">Welcome to the Application</h1>
       
-      <Button onClick={() => setIsModalOpen(true)}>Open Form Modal</Button>
+      <div className="flex gap-4">
+        <Button onClick={() => setIsModalOpen(true)}>Open Form Modal</Button>
+        <Link to="/dashboard">
+          <Button variant="secondary">Go to Dashboard</Button>
+        </Link>
+      </div>
       
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogContent className="bg-white sm:max-w-[550px]">
