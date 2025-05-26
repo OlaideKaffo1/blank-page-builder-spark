@@ -18,6 +18,8 @@ import {
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Link } from "react-router-dom";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -65,6 +67,20 @@ const Index = () => {
           <Button variant="secondary">Go to Dashboard</Button>
         </Link>
       </div>
+
+      {/* Live Status Card */}
+      <Card className="w-full max-w-md">
+        <CardHeader className="flex flex-row items-start justify-between space-y-0">
+          <div>
+            <CardTitle>System Status</CardTitle>
+            <CardDescription>Current application status</CardDescription>
+          </div>
+          <Badge variant="live">Live</Badge>
+        </CardHeader>
+        <CardContent>
+          <p>The application is currently running and all services are operational.</p>
+        </CardContent>
+      </Card>
       
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogContent className="bg-white sm:max-w-[550px]">
