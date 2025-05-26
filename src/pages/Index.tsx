@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
@@ -58,47 +59,55 @@ const Index = () => {
   }
 
   return (
-    <div className="min-h-screen w-full bg-white p-8 flex flex-col items-center justify-center gap-8">
-      <h1 className="text-3xl font-bold text-primary mb-4">Welcome to the Application</h1>
-      
-      <div className="flex gap-4 flex-wrap justify-center">
-        <Button onClick={() => setIsModalOpen(true)}>Open Form Modal</Button>
-        <Link to="/dashboard">
-          <Button variant="secondary">Go to Dashboard</Button>
-        </Link>
-      </div>
+    <div className="min-h-screen w-full bg-white p-8 flex flex-col items-center justify-center">
+      <div className="max-w-2xl mx-auto text-center space-y-8">
+        <h1 className="text-4xl font-bold tracking-tight leading-tight mb-6 text-primary">
+          Welcome to the Application
+        </h1>
+        
+        <div className="flex gap-4 flex-wrap justify-center mb-12">
+          <Button onClick={() => setIsModalOpen(true)}>Open Form Modal</Button>
+          <Link to="/dashboard">
+            <Button variant="secondary">Go to Dashboard</Button>
+          </Link>
+        </div>
 
-      {/* Live Status Card */}
-      <Card className="w-full max-w-md">
-        <CardHeader className="flex flex-row items-start justify-between space-y-0">
-          <div>
-            <CardTitle>System Status</CardTitle>
-            <CardDescription>Current application status</CardDescription>
-          </div>
-          <Badge variant="live">Live</Badge>
-        </CardHeader>
-        <CardContent>
-          <p>The application is currently running and all services are operational.</p>
-        </CardContent>
-      </Card>
+        {/* Live Status Card */}
+        <Card className="w-full max-w-md mx-auto">
+          <CardHeader className="flex flex-row items-start justify-between space-y-0 pb-4">
+            <div className="space-y-2">
+              <CardTitle className="text-xl font-semibold leading-tight">System Status</CardTitle>
+              <CardDescription className="text-sm leading-normal">
+                Current application status
+              </CardDescription>
+            </div>
+            <Badge variant="live">Live</Badge>
+          </CardHeader>
+          <CardContent className="pt-0">
+            <p className="text-base leading-relaxed">
+              The application is currently running and all services are operational.
+            </p>
+          </CardContent>
+        </Card>
+      </div>
       
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogContent className="bg-white sm:max-w-[550px]">
-          <DialogHeader>
-            <DialogTitle>Contact Form</DialogTitle>
-            <DialogDescription>
+          <DialogHeader className="space-y-3">
+            <DialogTitle className="text-xl font-semibold leading-tight">Contact Form</DialogTitle>
+            <DialogDescription className="text-sm leading-normal">
               Fill out this form to get in touch with us. We'll get back to you as soon as possible.
             </DialogDescription>
           </DialogHeader>
           
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 py-4">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 py-4">
               <FormField
                 control={form.control}
                 name="name"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Name</FormLabel>
+                  <FormItem className="space-y-2">
+                    <FormLabel className="text-sm font-medium">Name</FormLabel>
                     <FormControl>
                       <Input placeholder="Your name" {...field} />
                     </FormControl>
@@ -111,8 +120,8 @@ const Index = () => {
                 control={form.control}
                 name="email"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Email</FormLabel>
+                  <FormItem className="space-y-2">
+                    <FormLabel className="text-sm font-medium">Email</FormLabel>
                     <FormControl>
                       <Input type="email" placeholder="your.email@example.com" {...field} />
                     </FormControl>
@@ -125,8 +134,8 @@ const Index = () => {
                 control={form.control}
                 name="category"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Category</FormLabel>
+                  <FormItem className="space-y-2">
+                    <FormLabel className="text-sm font-medium">Category</FormLabel>
                     <Select onValueChange={field.onChange} defaultValue={field.value}>
                       <FormControl>
                         <SelectTrigger className="w-full">
@@ -151,24 +160,24 @@ const Index = () => {
                 name="priority"
                 render={({ field }) => (
                   <FormItem className="space-y-3">
-                    <FormLabel>Priority</FormLabel>
+                    <FormLabel className="text-sm font-medium">Priority</FormLabel>
                     <FormControl>
                       <RadioGroup
                         onValueChange={field.onChange}
                         defaultValue={field.value}
-                        className="flex flex-col space-y-1"
+                        className="flex flex-col space-y-3"
                       >
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-3">
                           <RadioGroupItem value="low" id="low" />
-                          <Label htmlFor="low">Low</Label>
+                          <Label htmlFor="low" className="text-sm leading-normal">Low</Label>
                         </div>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-3">
                           <RadioGroupItem value="medium" id="medium" />
-                          <Label htmlFor="medium">Medium</Label>
+                          <Label htmlFor="medium" className="text-sm leading-normal">Medium</Label>
                         </div>
-                        <div className="flex items-center space-x-2">
+                        <div className="flex items-center space-x-3">
                           <RadioGroupItem value="high" id="high" />
-                          <Label htmlFor="high">High</Label>
+                          <Label htmlFor="high" className="text-sm leading-normal">High</Label>
                         </div>
                       </RadioGroup>
                     </FormControl>
@@ -181,12 +190,12 @@ const Index = () => {
                 control={form.control}
                 name="message"
                 render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Message</FormLabel>
+                  <FormItem className="space-y-2">
+                    <FormLabel className="text-sm font-medium">Message</FormLabel>
                     <FormControl>
                       <Textarea 
                         placeholder="Write your message here..." 
-                        className="min-h-[120px]" 
+                        className="min-h-[120px] leading-relaxed" 
                         {...field} 
                       />
                     </FormControl>
@@ -195,7 +204,7 @@ const Index = () => {
                 )}
               />
               
-              <DialogFooter className="pt-4">
+              <DialogFooter className="pt-6 flex gap-3">
                 <Button variant="cancel" type="button" onClick={() => setIsModalOpen(false)}>
                   Cancel
                 </Button>
