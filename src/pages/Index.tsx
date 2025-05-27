@@ -77,7 +77,7 @@ const Index = () => {
             <CardTitle>System Status</CardTitle>
             <CardDescription>Current application status</CardDescription>
           </div>
-          <Badge variant="LIVE">Live</Badge>
+          <Badge variant="live">Live</Badge>
         </CardHeader>
         <CardContent>
           <p>The application is currently running and all services are operational.</p>
@@ -109,11 +109,11 @@ const Index = () => {
                     <div className="space-y-2">
                       <div className="flex justify-between">
                         <span>Total Projects</span>
-                        <Badge variant="LIVE">24</Badge>
+                        <Badge variant="live">24</Badge>
                       </div>
                       <div className="flex justify-between">
                         <span>Active Users</span>
-                        <Badge variant="INPROGRESS">156</Badge>
+                        <Badge variant="inProgress">156</Badge>
                       </div>
                       <div className="flex justify-between">
                         <span>Completed Tasks</span>
