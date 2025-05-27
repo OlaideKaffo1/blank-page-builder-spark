@@ -16,6 +16,7 @@ const buttonVariants = cva(
         secondary:
           "bg-white text-primary border border-primary hover:bg-accent hover:text-primary",
         link: "text-primary underline-offset-4 hover:underline",
+        ghost: "hover:bg-accent hover:text-accent-foreground",
         // Add new variants used in the style guide components
         cancel: "bg-gray-200 text-gray-800 hover:bg-gray-300",
         delete: "bg-red-500 text-white hover:bg-red-600",
