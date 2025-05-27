@@ -1,4 +1,3 @@
-
 import * as React from "react"
 import { ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-react"
 
@@ -50,7 +49,7 @@ const PaginationLink = ({
     aria-current={isActive ? "page" : undefined}
     className={cn(
       buttonVariants({
-        variant: isActive ? "default" : "secondary",
+        variant: isActive ? "ghost" : "ghost",
         size,
       }),
       className
@@ -116,3 +115,4 @@ export {
   PaginationNext,
   PaginationPrevious,
 }
+
