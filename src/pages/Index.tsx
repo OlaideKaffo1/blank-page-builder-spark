@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogDescription, DialogFooter } from "@/components/ui/dialog";
@@ -21,6 +20,7 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -77,10 +77,183 @@ const Index = () => {
             <CardTitle>System Status</CardTitle>
             <CardDescription>Current application status</CardDescription>
           </div>
-          <Badge variant="live">Live</Badge>
+          <Badge variant="LIVE">Live</Badge>
         </CardHeader>
         <CardContent>
           <p>The application is currently running and all services are operational.</p>
+        </CardContent>
+      </Card>
+      
+      {/* Tab Example */}
+      <Card className="w-full max-w-4xl">
+        <CardHeader>
+          <CardTitle>Tab Example</CardTitle>
+          <CardDescription>A comprehensive example of tab functionality</CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Tabs defaultValue="overview" className="w-full">
+            <TabsList className="grid w-full grid-cols-4">
+              <TabsTrigger value="overview">Overview</TabsTrigger>
+              <TabsTrigger value="analytics">Analytics</TabsTrigger>
+              <TabsTrigger value="reports">Reports</TabsTrigger>
+              <TabsTrigger value="settings">Settings</TabsTrigger>
+            </TabsList>
+            
+            <TabsContent value="overview" className="space-y-4">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Project Statistics</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-2">
+                      <div className="flex justify-between">
+                        <span>Total Projects</span>
+                        <Badge variant="LIVE">24</Badge>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Active Users</span>
+                        <Badge variant="INPROGRESS">156</Badge>
+                      </div>
+                      <div className="flex justify-between">
+                        <span>Completed Tasks</span>
+                        <Badge variant="completed">89</Badge>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card>
+                  <CardHeader>
+                    <CardTitle className="text-lg">Recent Activity</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <div className="space-y-3">
+                      <div className="text-sm">
+                        <p className="font-medium">New user registration</p>
+                        <p className="text-muted-foreground">2 minutes ago</p>
+                      </div>
+                      <div className="text-sm">
+                        <p className="font-medium">Project deployment completed</p>
+                        <p className="text-muted-foreground">15 minutes ago</p>
+                      </div>
+                      <div className="text-sm">
+                        <p className="font-medium">Database backup finished</p>
+                        <p className="text-muted-foreground">1 hour ago</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
+            </TabsContent>
+            
+            <TabsContent value="analytics" className="space-y-4">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Performance Metrics</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="text-center p-4 border rounded-lg">
+                      <div className="text-2xl font-bold text-primary">98.5%</div>
+                      <div className="text-sm text-muted-foreground">Uptime</div>
+                    </div>
+                    <div className="text-center p-4 border rounded-lg">
+                      <div className="text-2xl font-bold text-primary">1.2s</div>
+                      <div className="text-sm text-muted-foreground">Avg Response</div>
+                    </div>
+                    <div className="text-center p-4 border rounded-lg">
+                      <div className="text-2xl font-bold text-primary">15.2k</div>
+                      <div className="text-sm text-muted-foreground">Daily Requests</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="reports" className="space-y-4">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Available Reports</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="flex items-center justify-between p-3 border rounded-lg">
+                      <div>
+                        <div className="font-medium">Monthly Performance Report</div>
+                        <div className="text-sm text-muted-foreground">Last updated: Today</div>
+                      </div>
+                      <Button size="sm" variant="secondary">Download</Button>
+                    </div>
+                    <div className="flex items-center justify-between p-3 border rounded-lg">
+                      <div>
+                        <div className="font-medium">User Activity Report</div>
+                        <div className="text-sm text-muted-foreground">Last updated: Yesterday</div>
+                      </div>
+                      <Button size="sm" variant="secondary">Download</Button>
+                    </div>
+                    <div className="flex items-center justify-between p-3 border rounded-lg">
+                      <div>
+                        <div className="font-medium">Security Audit Report</div>
+                        <div className="text-sm text-muted-foreground">Last updated: 3 days ago</div>
+                      </div>
+                      <Button size="sm" variant="secondary">Download</Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+            
+            <TabsContent value="settings" className="space-y-4">
+              <Card>
+                <CardHeader>
+                  <CardTitle className="text-lg">Application Settings</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="space-y-4">
+                    <div className="space-y-2">
+                      <Label htmlFor="app-name">Application Name</Label>
+                      <Input id="app-name" defaultValue="My Application" />
+                    </div>
+                    <div className="space-y-2">
+                      <Label htmlFor="timezone">Timezone</Label>
+                      <Select defaultValue="utc">
+                        <SelectTrigger>
+                          <SelectValue />
+                        </SelectTrigger>
+                        <SelectContent>
+                          <SelectItem value="utc">UTC</SelectItem>
+                          <SelectItem value="est">Eastern Time</SelectItem>
+                          <SelectItem value="pst">Pacific Time</SelectItem>
+                          <SelectItem value="cet">Central European Time</SelectItem>
+                        </SelectContent>
+                      </Select>
+                    </div>
+                    <div className="space-y-2">
+                      <Label>Notification Preferences</Label>
+                      <RadioGroup defaultValue="email" className="mt-2">
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="email" id="email" />
+                          <Label htmlFor="email">Email notifications</Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="sms" id="sms" />
+                          <Label htmlFor="sms">SMS notifications</Label>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                          <RadioGroupItem value="none" id="none" />
+                          <Label htmlFor="none">No notifications</Label>
+                        </div>
+                      </RadioGroup>
+                    </div>
+                    <div className="pt-4">
+                      <Button>Save Settings</Button>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </TabsContent>
+          </Tabs>
         </CardContent>
       </Card>
       
