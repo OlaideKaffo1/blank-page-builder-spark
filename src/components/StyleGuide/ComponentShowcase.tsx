@@ -98,7 +98,7 @@ export default function ComponentShowcase() {
                 <CardTitle>Feature Card</CardTitle>
                 <CardDescription>Standard card with badge</CardDescription>
               </div>
-              <Badge variant="LIVE">Live</Badge>
+              <Badge variant="live">Live</Badge>
             </CardHeader>
             <CardContent>
               <p>Cards group related content and information. Use this standardized card layout throughout your application for consistency.</p>
@@ -128,7 +128,7 @@ import { Badge } from "@/components/ui/badge";
       <CardTitle>Card Title</CardTitle>
       <CardDescription>Card description</CardDescription>
     </div>
-    <Badge variant="LIVE">Live</Badge>
+    <Badge variant="live">Live</Badge>
   </CardHeader>
   <CardContent>
     {/* Content here */}
@@ -307,8 +307,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
           <h3 className="text-lg font-medium">Status Badges</h3>
           
           <div className="flex flex-wrap gap-3">
-            <Badge variant="INPROGRESS">In progress</Badge>
-            <Badge variant="LIVE">Live</Badge>
+            <Badge variant="inProgress">In progress</Badge>
+            <Badge variant="live">Live</Badge>
             <Badge variant="completed">Completed</Badge>
             <Badge variant="cancelled">Cancelled</Badge>
           </div>
@@ -329,8 +329,8 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 {`import { Badge } from "@/components/ui/badge";
 
 // Status badges
-<Badge variant="INPROGRESS">In progress</Badge>
-<Badge variant="LIVE">Live</Badge>
+<Badge variant="inProgress">In progress</Badge>
+<Badge variant="live">Live</Badge>
 <Badge variant="completed">Completed</Badge>
 <Badge variant="cancelled">Cancelled</Badge>`}
             </pre>
